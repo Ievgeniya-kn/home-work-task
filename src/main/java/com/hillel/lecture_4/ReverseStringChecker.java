@@ -13,6 +13,10 @@ public class ReverseStringChecker {
 //        TODO implements result
         String result = "";
 
+        for (int i= value.length()-1;i>=0;i--) {
+            result= result + value.charAt(i);
+        }
+
         return result;
     }
 

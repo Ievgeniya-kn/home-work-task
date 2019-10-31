@@ -1,5 +1,9 @@
 package com.hillel.lecture_4;
 
+import java.lang.reflect.Array;
+import java.util.Arrays;
+import java.util.Collections;
+
 import io.qameta.allure.Step;
 
 /**
@@ -11,7 +15,9 @@ public class SortingChecker {
     public int[] fromMinToMax(int[] values) {
 
 //        TODO implements result
-        int[] result = new int[0];
+        int[] result = values;
+
+        Arrays.sort(result);
 
         return result;
     }
@@ -20,7 +26,20 @@ public class SortingChecker {
     public int[] fromMaxToMin(int[] values) {
 
 //        TODO implements result
-        int[] result = new int[0];
+        int[] result = values;
+
+        int lengthArray=result.length;
+
+        for (int j=0;j<lengthArray;j++) {
+            int temporary=result[j];
+            int i=j-1;
+            while ( (i > -1) && ( result [i] < temporary ) ) {
+                result [i+1] = result [i];
+                i--;
+            }
+            result[i+1] = temporary;
+
+        }
 
         return result;
     }
