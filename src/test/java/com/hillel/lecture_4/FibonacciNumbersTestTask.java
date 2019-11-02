@@ -17,4 +17,5 @@ public class FibonacciNumbersTestTask {
 
         assertEquals(fibonacciNumbersChecker.getFibonacciNumbers(20), expectedResult) ;
     }
+
 }

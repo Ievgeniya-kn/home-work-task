@@ -18,7 +18,7 @@ public class DiscountCountTest {
     public void checkDiscountExist() {
         double price = 345.8;
 
-        assertEquals(discountCountChecker.checkDiscountCount(price), 0.0);
+        assertEquals(discountCountChecker.checkDiscountCount(price), 0);
     }
 
     @Test

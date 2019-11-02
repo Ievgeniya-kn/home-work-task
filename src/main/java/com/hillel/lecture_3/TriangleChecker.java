@@ -13,6 +13,11 @@ public class TriangleChecker {
 //        TODO implements result
         String result = "";
 
+        if (a!=b && a!=c && b!=c) {
+            result ="No isosceles triangle!";
+        } else
+            result =  "Isosceles triangle!";
+
         return result;
     }
 }

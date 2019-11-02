@@ -10,22 +10,22 @@ package com.hillel.lecture_4;
 public class RowSumTestTask {
 
     public static void main(String[] args) {
-        int[][] table =  {{2, 4, 7, 13},
-                          {5, 12, 5, 14}};
+        int[][] table = {{2, 4, 7, 13},
+                {5, 12, 7, 14}};
 
-        int m=4;
+        int m = table[0].length;
         int sum;
         String Number = "";
         System.out.println("| Row_1 | Row_2 | Sum | More");
 
-        for (int i=0;i<m;i++) {
+        for (int i = 0; i < m; i++) {
             sum = table[0][i] + table[1][i];
-            if (table[0][i]==table[1][i]) {
+            if (table[0][i] == table[1][i]) {
                 Number = "Equals";
-            } else  if (table[0][i]> table [1][i]) {
-                Number="First";
+            } else if (table[0][i] > table[1][i]) {
+                Number = "First";
             } else Number = "Second";
-            System.out.println("| " + table[0][i] + " | " + table[1][i]+ " | " + sum + " | " + Number);
+            System.out.println("| " + table[0][i] + " \t| " + table[1][i] + " \t| " + sum + " \t| " + Number);
         }
     }
 

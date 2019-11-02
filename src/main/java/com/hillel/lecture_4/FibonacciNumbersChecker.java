@@ -18,10 +18,11 @@ public class FibonacciNumbersChecker {
             result[0] = 0;
             result[1] = 1;
         }
-        if (number>=2  ) {
-        for (int i = 2; i < number; i++) {
-            result[i] = result[i - 1] + result[i - 2];
-        }
+        if (number >= 2) {
+            for (int i = 2; i < number; i++) {
+
+                result[i] = result[i - 1] + result[i - 2];
+            }
         }
         return result;
     }

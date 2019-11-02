@@ -8,28 +8,51 @@ import io.qameta.allure.Step;
 public class MaxMinAverageChecker {
 
     @Step
-    public int getMaxNumber(int a, int b , int c) {
+    public int getMaxNumber(int a, int b, int c) {
 
 //        TODO implements result
         int result = 0;
+        if (a >= b && a >= c) {
+            result = a;
+        } else if (b >= a && b >= c) {
+            result = b;
+        } else if (c >= a && c >= b) {
+            result = c;
+        }
+
 
         return result;
     }
 
     @Step
-    public int getAverageNumber(int a, int b , int c) {
+    public int getAverageNumber(int a, int b, int c) {
 
 //        TODO implements result
         int result = 0;
+
+        if ((a >= b & a <= c) || (a <= b && a >= c)) {
+            result = a;
+        } else if ((b >= a && b<= c) || (b <= a && b >= c)) {
+            result = b;
+        } else result = c;
+
 
         return result;
     }
 
     @Step
-    public int getMinNumber(int a, int b , int c) {
+    public int getMinNumber(int a, int b, int c) {
 
 //        TODO implements result
         int result = 0;
+
+        if (a <= b && a <= c) {
+            result = a;
+        } else if (b <= a && b <= c) {
+            result = b;
+        } else if (c <= a && c <= b) {
+            result = c;
+        }
 
         return result;
     }
