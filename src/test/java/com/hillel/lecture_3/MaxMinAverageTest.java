@@ -48,9 +48,9 @@ public class MaxMinAverageTest {
         int b = 9;
         int c = 9;
 
-        assertEquals(maxMinAverageChecker.getMaxNumber(a, b, c), 0);
-        assertEquals(maxMinAverageChecker.getAverageNumber(a, b, c), 0);
-        assertEquals(maxMinAverageChecker.getMinNumber(a, b, c), 0);
+        assertEquals(maxMinAverageChecker.getMaxNumber(a, b, c), 9);
+        assertEquals(maxMinAverageChecker.getAverageNumber(a, b, c), 9);
+        assertEquals(maxMinAverageChecker.getMinNumber(a, b, c), 9);
     }
 
 }

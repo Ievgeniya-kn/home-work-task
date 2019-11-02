@@ -59,11 +59,6 @@ public class Formulas {
                 Math.log(Math.abs(x - 3.14d)));
 
 
-        //incorrect implementation which passed test - due to Numerator is calculated  as 1 upon try to get pow in Zero pow - compare 1d/5 to 1/5
-//        result = Math.pow(Math.pow(Math.E, -2 + x), (1 / 5)) /
-//        Math.sqrt(Math.pow(x, 2) + Math.pow(x, 4) +
-//                Math.log(Math.abs(x - 3.14d)));
-
 //        TODO implement formula 13
         return result;
     }
