@@ -18,6 +18,26 @@ package com.hillel.basic.exam;
 public class JadenCase {
 
     public String toJadenCase(String phrase) {
-        return null;
+        String result = "";
+
+        if ((phrase==null)||(phrase=="")) {
+         return null;
+        }
+
+        String[] arrayExample = phrase.split(" ");
+        result = toSentenceCase(arrayExample[0]);
+
+        for (int i = 1; i < arrayExample.length; i++) {
+            result = result + " " + toSentenceCase(arrayExample[i]);
+        }
+        return result;
+    }
+
+    public static String toSentenceCase (String sentence)   {
+        String result=sentence.substring(0, 1).toUpperCase() + sentence.substring(1);
+        return result;
     }
 }
+
+
+

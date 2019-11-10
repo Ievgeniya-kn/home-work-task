@@ -18,6 +18,22 @@ package com.hillel.basic.exam;
 public class NumberRotator {
 
     public static long rotate(long n) {
-        return 0;
+        String array = "" + n;
+        long result = n;
+
+        array = array.substring(1) + array.substring(0, 1);
+        if (Long.valueOf(array) > result) {
+            result = Long.valueOf(array);
+        }
+
+
+        for (int j = 1; j < array.length() - 1; j++) {
+                    array = array.substring(0,j) + array.substring(j+1) + array.substring(j, j+1);
+            if (Long.valueOf(array) > result) {
+                result = Long.valueOf(array);
+                }
+            }
+
+            return result;
+        }
     }
-}
