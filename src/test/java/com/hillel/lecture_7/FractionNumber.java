@@ -12,6 +12,16 @@ public class FractionNumber {
         this.numberTwo = numberTwo;
     }
 
+
+    public void setNumberOne() {
+        this.numberOne = numberOne;
+    }
+
+    public void setNumberTwo() {
+        this.numberTwo = numberTwo;
+    }
+
+
     public long getNumberOne() {
         return numberTwo;
     }
@@ -21,23 +31,22 @@ public class FractionNumber {
     }
 
     public long fractionNumberPlus() {
-        return this.numberOne+this.numberTwo;
+        return this.numberOne + this.numberTwo;
     }
 
     public long fractionNumberMinus() {
-        return this.numberOne-this.numberTwo;
+        return this.numberOne - this.numberTwo;
     }
 
     public long fractionNumberMultiply() {
-        return this.numberOne*this.numberTwo;
+        return this.numberOne * this.numberTwo;
     }
 
     public long fractionNumberDivide() {
-        if (this.numberTwo==0) {
+        if (this.numberTwo == 0) {
             System.out.println("It's forbidden to Divide to Zero!!!");
             return 0;
-        }
-        else {
+        } else {
             return this.numberOne / this.numberTwo;
         }
     }
