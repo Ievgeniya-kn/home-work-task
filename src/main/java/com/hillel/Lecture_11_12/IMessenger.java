@@ -6,7 +6,7 @@ public interface IMessenger {
 
     String lastVisit();
 
-    String busy(boolean busy);
+    String busy(boolean busy) throws CustomExceptions;
 
     String online(boolean online);
 

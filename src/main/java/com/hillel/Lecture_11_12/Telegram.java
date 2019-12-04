@@ -12,9 +12,16 @@ public class Telegram implements IMessenger {
     @Override
     public String lastVisit() {
         Random random = new Random();
-        int rand = random.nextInt(7);
+        int rand = random.nextInt(125);
+        try {
+            return lastVisit(rand);
+        } catch (IndexOutOfBoundsException ex) {
+            ex.printStackTrace();
+        }
+         finally {
+            return lastVisit(2);
+        }
 
-        return lastVisit(rand);
     }
 
     public String lastVisit(int rand) {

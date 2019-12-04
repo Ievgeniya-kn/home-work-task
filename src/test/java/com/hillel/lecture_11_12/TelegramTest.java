@@ -12,7 +12,7 @@ public class TelegramTest {
 
     @Test
     public void assertTelegramSendMessageChecker() {
-        assertEquals(telegram.sendMessage(),"Nice day to visit");
+        assertEquals(telegram.sendMessage(), "Nice day to visit");
     }
 
     @Test
@@ -22,6 +22,7 @@ public class TelegramTest {
 
     @Test
     public void assertTelegramOnline() {
+
         assertEquals(telegram.online(false), "I'm always online? false");
     }
 
@@ -32,6 +33,12 @@ public class TelegramTest {
 
     @Test
     public void assertTelegram() {
+
         assertEquals(telegram.lastVisit(2), "TUESDAY");
+    }
+
+    @Test
+    public void assertTelegramLastVisitTest() {
+        assertEquals(telegram.lastVisit(), "TUESDAY");
     }
 }

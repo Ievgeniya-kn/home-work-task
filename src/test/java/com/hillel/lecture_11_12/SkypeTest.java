@@ -33,4 +33,6 @@ public class SkypeTest {
         assertEquals(skype.translateHello(),"Bonjour");
     }
 
+    @Test
+    public void SkypeUniqueMessage() {assertEquals(skype.testError("Keep Calm"),"non-unique");    };
 }
