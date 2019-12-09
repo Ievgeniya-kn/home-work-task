@@ -42,7 +42,7 @@ public class ArraysTestTask {
     public void removeDuplicatesTest() {
         List<String> data = Arrays.asList("Iron Man", "Captain America", "Iron Man", "Spider-man", "Thor", "Star Lord",
                 "Star Lord", "Thor");
-        List<String> result = Arrays.asList("Iron Man", "Captain America", "Spider-man","Thor", "Star Lord");
+        List<String> result = Arrays.asList("Iron Man", "Captain America", "Spider-man", "Thor", "Star Lord");
 
         assertEquals(arraysChecker.removeDuplicates(data), result);
     }

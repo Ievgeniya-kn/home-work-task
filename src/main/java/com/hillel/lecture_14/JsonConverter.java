@@ -1,6 +1,5 @@
 package com.hillel.lecture_14;
 
-import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -18,12 +17,20 @@ import java.util.List;
 public class JsonConverter {
 
 
-    public List<User> convertUsers(List<User> users) {
+    public String convertToJsonString(List<User> users) {
 
 //        TODO implements result
-        List<User> userList = new ArrayList<>();
+        String result = "";
 
-        return userList;
+        return result;
+    }
+
+    public String convertToJsonString(User users) {
+
+//        TODO implements result
+        String result = "";
+
+        return result;
     }
 
 
