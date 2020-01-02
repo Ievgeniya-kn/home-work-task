@@ -98,4 +98,6 @@ public class User {
     public void setFriends(List<Friend> friends) {
         this.friends = friends;
     }
+
+
 }

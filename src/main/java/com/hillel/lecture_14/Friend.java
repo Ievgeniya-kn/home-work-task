@@ -32,4 +32,6 @@ public class Friend {
     public void setLastName(String lastName) {
         this.lastName = lastName;
     }
+
+
 }

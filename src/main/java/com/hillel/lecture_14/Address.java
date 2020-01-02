@@ -23,4 +23,5 @@ public class Address {
     public void setStreet(String street) {
         this.street = street;
     }
+
 }
