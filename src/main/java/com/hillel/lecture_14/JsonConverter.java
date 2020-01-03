@@ -28,27 +28,23 @@ public class JsonConverter {
 
 //        TODO implements result
         String result = "";
-        result = doubleQuotes + leftBracket;
 
         for (User user1 : users
-        ) {
-            result = result + leftCurlyBracket + useMapToJSON(user1) + rightCurlyBracket + comma;
-
+        ) { result += addComma(addCurlyBracket(useMapToJSON(user1)));
         }
         result = removeLastComma(result);
-        result = result + rightBracket + doubleQuotes;
 
-        return result;
+        return addQuotes(addBracket(result));
     }
 
     public String convertToJsonString(User users) {
 
 //        TODO implements result
-        String result = doubleQuotes + leftCurlyBracket;
+        String result = "";
 
-        result = result + useMapToJSON(users) + rightCurlyBracket + doubleQuotes;
+        result = useMapToJSON(users);
 
-        return result;
+        return addQuotes(addCurlyBracket(result));
     }
 
 
@@ -58,12 +54,12 @@ public class JsonConverter {
         Map<String, Object> mapToJSON = new LinkedHashMap<>();
 
         mapToJSON.put("id", user.getId());
-        mapToJSON.put("firstName", basicToJson(user.getFirstName()));
-        mapToJSON.put("lastName", basicToJson(user.getLastName()));
+        mapToJSON.put("firstName", addQuotes(user.getFirstName()));
+        mapToJSON.put("lastName", addQuotes(user.getLastName()));
         mapToJSON.put("age", user.getAge());
-        mapToJSON.put("gender", basicToJson(user.getGender()));
-        mapToJSON.put("company", basicToJson(user.getCompany()));
-        mapToJSON.put("email", basicToJson(user.getEmail()));
+        mapToJSON.put("gender", addQuotes(user.getGender()));
+        mapToJSON.put("company", addQuotes(user.getCompany()));
+        mapToJSON.put("email", addQuotes(user.getEmail()));
         mapToJSON.put("phone", phonesToJson(user.getPhone()));
         mapToJSON.put("address", addressToJson(user.getAddress()));
         mapToJSON.put("friends", friendsToJson(user.getFriends()));
@@ -78,43 +74,50 @@ public class JsonConverter {
 
     private String friendsToJson(List<Friend> friends) {
         String result = leftBracket;
+
         for (Friend newFriend : friends
         ) {
-            result += leftCurlyBracket;
-            result = result.concat(useMapEntryToJSON("id", newFriend.getId()));
-            result = result.concat(useMapEntryToJSON2("firstName", newFriend.getFirstName()));
-            result = result.concat(useMapEntryToJSON2("lastName", newFriend.getLastName()));
-            result = removeLastComma(result);
-            result += rightCurlyBracket + comma;
+            String temporaryString = "";
+            temporaryString = temporaryString.concat(useMapEntryToJSON("id", newFriend.getId()));
+            temporaryString = temporaryString.concat(useMapEntryToJSON2("firstName", newFriend.getFirstName()));
+            temporaryString = temporaryString.concat(useMapEntryToJSON2("lastName", newFriend.getLastName()));
+            temporaryString = addCurlyBracket(removeLastComma(temporaryString));
+            result += addComma(temporaryString);
         }
-
         result = removeLastComma(result);
         return result + rightBracket;
     }
 
+    private String addCurlyBracket(String result) {
+        return leftCurlyBracket + result + rightCurlyBracket;
+    }
+
+    private String addComma(String result) {
+        return result + comma;
+    }
+
+    private String addBracket(String result) {
+        return leftBracket + result + rightBracket;
+    }
 
     private String addressToJson(Address addresses) {
         String result = "";
 
-        result += leftCurlyBracket;
         result = result.concat(useMapEntryToJSON2("city", addresses.getCity()));
         result = result.concat(useMapEntryToJSON2("street", addresses.getStreet()));
-        result = removeLastComma(result);
-        result += rightCurlyBracket + comma;
+        result = addCurlyBracket(removeLastComma(result));
 
-
-        result = removeLastComma(result);
         return result;
     }
 
     private String phonesToJson(List<String> phones) {
-        String result = leftBracket;
+        String result = "";
         for (String phone : phones
         ) {
-            result = result.concat(basicToJson(phone)) + comma;
+            result = addComma(result.concat(addQuotes(phone)));
         }
         result = removeLastComma(result);
-        return result + rightBracket;
+        return addBracket(result);
     }
 
 
@@ -123,7 +126,7 @@ public class JsonConverter {
     }
 
 
-    private String basicToJson(String value) {
+    private String addQuotes(String value) {
         String result = doubleQuotes + value + doubleQuotes;
 
         return result;
